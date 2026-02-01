@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav className="sticky  top-0 z-50 w-full glass border-b border-white/5">
+    <nav className="sticky  top-0 z-50 w-full glass">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* <!-- Logo --> */}
