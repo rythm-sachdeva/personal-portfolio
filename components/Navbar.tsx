@@ -8,7 +8,7 @@ const Navbar = () => {
           {/* <!-- Logo --> */}
           <div className="flex items-center gap-2">
             <div className="text-primary">
-              <span className="material-symbols-outlined text-[28px]">{"<Rythm>"}</span>
+              <span className="material-symbols-outlined font-bold text-[28px]">{"<Rythm>"}</span>
               <span className="material-symbols-outlined text-white text-[28px]">{"</Sachdeva>"}</span>
             </div>
           </div>
