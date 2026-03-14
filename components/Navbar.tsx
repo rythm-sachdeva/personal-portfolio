@@ -1,7 +1,10 @@
+"use client"
+import { useNav } from '@/store/NavBarStore'
 import React from 'react'
 
 const Navbar = () => {
-  return (
+  const {navigation} = useNav();
+   return (
     <nav className="sticky  top-0 z-50 w-full glass">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -14,10 +17,11 @@ const Navbar = () => {
           </div>
 
           <div className="fixed top-4 left-1/2 -translate-x-1/2 md:flex bg-white/[0.03] rounded-full backdrop-blur-md border border-white/5 px-5 py-3 items-center gap-8">
-            <a className="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Home</a>
-            <a className="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#about">About</a>
-            <a className="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Work</a>
-            <a className="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Contact</a>
+          {
+            Array.from(navigation).map((value)=>(
+              <a className={`text-sm font-medium ${value[1]? 'text-primary': 'text-gray-300'}  hover:text-primary transition-colors`} href="#">{value[0]}</a>
+            ))
+          }
           </div> 
           <div className="flex items-center gap-4">
             
