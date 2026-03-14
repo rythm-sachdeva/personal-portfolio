@@ -1,6 +1,7 @@
 import React from 'react'
 import { ProjectButtons } from '@/globals/project-buttons'
 import Card from './Card'
+import { cardContent } from '@/globals/Card-Content'
 
 const Projects = () => {
   return (
@@ -28,7 +29,7 @@ const Projects = () => {
 
         {/* main section */}
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-           {[1,2,3,4,5,6].map((v)=><Card key={v}/>)  }
+           {cardContent.map((v)=><Card key={v.primaryTitle} content={v}/>)  }
         </div>
     </section>
   )

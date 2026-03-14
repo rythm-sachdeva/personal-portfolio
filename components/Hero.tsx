@@ -8,7 +8,7 @@ const Hero = () => {
     return (
         <section className='relative w-full flex items-center min-h-[calc(100vh-80px)] overflow-hidden pb-20'>
             {/* Ambient Background Elements */}
-            <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+             <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
             <div className="layout-container flex flex-col w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
