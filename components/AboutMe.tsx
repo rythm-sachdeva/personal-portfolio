@@ -52,66 +52,77 @@ const AboutMe = () => {
               <div className="flex flex-wrap gap-2">
 
                 <GlowLink
+                href=''
                   icon={<FaReact color='rgb(97, 218, 251)' />}
                   color='rgb(97, 218, 251, 0.7)'
                   aria-label='React'
                 />
 
                 <GlowLink
+                  href=''
                   icon={<SiNextdotjs color='rgb(255, 255, 255)' />}
                   color='rgb(255, 255, 255, 0.7)'
                   aria-label='Next.js'
                 />
 
                 <GlowLink
+                  href=''
                   icon={<FaRust color='rgb(206, 145, 120)' />}
                   color='rgb(206, 145, 120, 0.7)'
                   aria-label='Rust'
                 />
 
                 <GlowLink
+                  href=''
                   icon={<FaNode color='rgb(104, 160, 99)' />}
                   color='rgb(104, 160, 99, 0.7)'
                   aria-label='Node.js'
                 />
 
                 <GlowLink
+                  href=''
                   icon={<FaJava color='rgb(237, 106, 67)' />}
                   color='rgb(237, 106, 67, 0.7)'
                   aria-label='Java'
                 />
 
                 <GlowLink
+                  href=''
                   icon={<SiCplusplus color='rgb(0, 89, 157)' />}
                   color='rgb(0, 89, 157, 0.7)'
                   aria-label='C++'
                 />
 
                 <GlowLink
+                href=''
                   icon={<SiNestjs color='rgb(224, 35, 79)' />}
                   color='rgb(224, 35, 79, 0.7)'
                   aria-label='NestJS'
                 />
 
                 <GlowLink
+                href=''
                   icon={<SiDjango color='rgb(12, 75, 51)' />}
                   color='rgb(12, 75, 51, 0.7)'
                   aria-label='Django'
                 />
 
                 <GlowLink
+                 href=''
                   icon={<FaPython color='rgb(55, 118, 171)' />}
                   color='rgb(55, 118, 171, 0.7)'
                   aria-label='Python'
                 />
 
                 <GlowLink
+                href=''
                   icon={<FaDocker color='rgb(32, 139, 234)' />}
                   color='rgb(32, 139, 234, 0.7)'
                   aria-label='Docker'
                 />
 
                 <GlowLink
+                href=''
                   icon={<FaGitAlt color='rgb(240, 80, 51)' />}
                   color='rgb(240, 80, 51, 0.7)'
                   aria-label='Git'
