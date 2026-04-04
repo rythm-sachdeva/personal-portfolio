@@ -18,8 +18,8 @@ const Navbar = () => {
 
           <div className="fixed top-4 left-1/2 -translate-x-1/2 md:flex bg-white/[0.03] rounded-full backdrop-blur-md border border-white/5 px-5 py-3 items-center gap-8">
           {
-            Array.from(navigation).map((value)=>(
-              <a className={`text-sm font-medium ${value[1]? 'text-primary': 'text-gray-300'}  hover:text-primary transition-colors`} href="#">{value[0]}</a>
+            Array.from(navigation).map((value,idx)=>(
+              <a key={idx} className={`text-sm font-medium ${value[1]? 'text-primary': 'text-gray-300'}  hover:text-primary transition-colors`} href="#">{value[0]}</a>
             ))
           }
           </div> 
