@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+import React, { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 
 type PropsType = {
 	color: string;
@@ -16,7 +16,7 @@ export const GlowLink = ({ color, icon, href, ...props }: PropsType) => {
 			className='glow-box glow-link '
 			style={{
 				'--clr': color,
-			}}
+			} as React.CSSProperties}
 			{...props}
 		>
 			{icon}
