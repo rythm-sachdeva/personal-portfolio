@@ -44,7 +44,7 @@ const AboutMe = () => {
               </p>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-4 px-5 md:px-0">
               <h3 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary"><IoTerminal /></span>
                 Technical Skills
