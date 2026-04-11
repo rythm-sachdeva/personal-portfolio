@@ -1,12 +1,13 @@
-import React from 'react'
+"use client"
 import { GlowLink } from './GlowLink'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { IoMailOutline } from 'react-icons/io5'
 import AboutMe from './AboutMe'
+import {motion} from "framer-motion";
 
 const Hero = () => {
     return (
-        <section className='relative w-full flex items-center min-h-[calc(100vh-80px)] overflow-hidden pb-20'>
+        <motion.section className='relative w-full flex items-center min-h-[calc(100vh-80px)] overflow-hidden pb-20' id='home'>
             {/* Ambient Background Elements */}
              <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -30,7 +31,15 @@ const Hero = () => {
                         </p>
                     </div>
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <button className="flex items-center justify-center h-12 px-8 rounded-lg bg-primary text-white font-bold tracking-wide transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(19,55,236,0.4)] hover:-translate-y-0.5">
+                        <button
+                        onClick={(e)=>{
+                      e.preventDefault();
+                      const target = document.getElementById(`work`);
+                      if(target){
+                        target.scrollIntoView({ behavior:'smooth'});
+                      }
+                    }}
+                        className="flex items-center cursor-pointer justify-center h-14 md:h-12 px-4 md:px-8 rounded-lg bg-primary text-white font-bold tracking-wide transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(19,55,236,0.4)] hover:-translate-y-0.5">
                             View Projects
                         </button>
                        <GlowLink
@@ -52,6 +61,11 @@ const Hero = () => {
 					aria-label='mail'
 				/>
                     </div>
+                    <a href='/Rythm_Sachdeva_FullStack_Dev_Resume_2026 (1).pdf' className='flex justify-center sm:hidden' download="RYTHM_SACHDEVA_RESUME.pdf">
+                    <button className="glow-box-button glow-box-link">
+                         Download Resume
+</button>
+                    </a>
                     <div className="flex items-center gap-8 pt-8 text-gray-500 border-t border-white/5 mt-4">
                         <div>
                             <span className="block text-2xl font-bold text-white">5+</span>
@@ -72,7 +86,7 @@ const Hero = () => {
         
 
 
-        </section>
+        </motion.section>
     )
 }
 

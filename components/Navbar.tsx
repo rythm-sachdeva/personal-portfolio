@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from "framer-motion"
 
 
 const Navbar = () => {
-  const { navigation } = useNav();
+  const navigation = useNav((state) => state.navigation);
+const setNav = useNav((state) => state.setNav);
+const isActive = useNav((state) => state.isActive);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <nav className="sticky top-0 z-50 w-full glass">
@@ -20,18 +22,36 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden fixed top-4 left-1/2 -translate-x-1/2 md:flex bg-white/[0.03] rounded-full backdrop-blur-md border border-white/5 px-5 py-3 items-center gap-8">
+          <motion.div className="hidden fixed top-4 left-1/2 -translate-x-1/2 md:flex bg-white/[0.03] rounded-full backdrop-blur-md border border-white/5 px-5 py-3 items-center gap-8">
             {
               Array.from(navigation).map((value, idx) => (
-                <a key={idx} className={`text-sm font-medium ${value[1] ? 'text-primary' : 'text-gray-300'}  hover:text-primary transition-colors`} href="#">{value[0]}</a>
+                 <motion.div
+                    key={idx}
+                    className={`text-md px-3 py-1 navbar font-medium ${isActive(value[0]) ? "text-primary" : "text-gray-300"} hover:text-primary cursor-pointer transition-colors`}
+                    onClick={(e)=>{
+                      e.preventDefault();
+                      const target = document.getElementById(`${value[0].toLowerCase()}`);
+                      if(target){
+                        target.scrollIntoView({ behavior:'smooth'});
+                      }
+                     setNav(value[0]);
+                    }}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.15, delay: idx * 0.05 }}
+                    whileHover={{scale:1.05}}
+                  >
+                    {value[0]}
+                  </motion.div>
               ))
             }
-          </div>
+          </motion.div>
           <div className="flex items-center gap-4">
-
-            <button className="hidden sm:flex items-center justify-center h-10 px-5 rounded-lg bg-primary hover:bg-primary/90 text-white text-sm font-bold transition-all shadow-[0_0_15px_rgba(19,55,236,0.3)]">
-              Contact Me
+          <a href='/Rythm_Sachdeva_FullStack_Dev_Resume_2026 (1).pdf' download="RYTHM_SACHDEVA_RESUME.pdf">
+            <button className="hidden cursor-pointer sm:flex items-center justify-center h-10 px-5 rounded-lg bg-primary hover:bg-primary/90 text-white text-sm font-bold transition-all shadow-[0_0_15px_rgba(19,55,236,0.3)]">
+              Download Resume
             </button>
+            </a>
             <span className='bg-white/[0.03] backdrop-blur-md rounded-2xl border  border-white/5'>
               <button onClick={() => {
                 setIsOpen((state) => {
@@ -55,16 +75,24 @@ const Navbar = () => {
                 style={{ transformOrigin: "top" }}
               >
                 {Array.from(navigation).map((value, idx) => (
-                  <motion.a
+                  <motion.div
                     key={idx}
-                    className={`text-sm font-medium ${value[1] ? "text-primary" : "text-gray-300"} hover:text-primary transition-colors`}
-                    href="#"
+                    className={`text-sm font-medium ${isActive(value[0]) ? "text-primary" : "text-gray-300"} hover:text-primary transition-colors`}
+                    onClick={(e)=>{
+                      e.preventDefault();
+                      const target = document.getElementById(`${value[0].toLowerCase()}`);
+                      if(target){
+                        target.scrollIntoView({ behavior:'smooth'});
+                      }
+                      console.log(value[0]);
+                     setNav(value[0]);
+                    }}
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.15, delay: idx * 0.05 }}
                   >
                     {value[0]}
-                  </motion.a>
+                  </motion.div>
                 ))}
               </motion.div>
             )}

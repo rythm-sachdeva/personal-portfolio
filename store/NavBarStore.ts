@@ -11,7 +11,6 @@ const defaultState = new Map<string,boolean>([
     ['Home',true],
     ['About',false],
     ['Work',false],
-    ['Contact',false]
 ])
 
 export const useNav = create<NavStore>((set,get)=>({

@@ -1,13 +1,14 @@
-import React from 'react'
+"use client"
 import { MdVerified } from "react-icons/md";
 import { IoTerminal } from "react-icons/io5";
 import { GlowLink } from './GlowLink';
 import { FaReact, FaRust, FaNode, FaJava, FaPython, FaDocker, FaGitAlt } from 'react-icons/fa';
 import { SiNextdotjs, SiCplusplus, SiNestjs, SiDjango, SiReact, SiExpo } from 'react-icons/si';
+import {motion} from 'framer-motion';
 
 const AboutMe = () => {
   return (
-    <section className="relative w-full py-24 bg-surface-dark/30" id="about">
+    <motion.section className="relative w-full py-24 bg-surface-dark/30" id="about">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="mb-16">
@@ -134,7 +135,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

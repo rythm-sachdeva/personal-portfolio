@@ -1,11 +1,12 @@
-import React from 'react'
+"use client"
 import { ProjectButtons } from '@/globals/project-buttons'
 import Card from './Card'
 import { cardContent } from '@/globals/Card-Content'
+import {motion} from "framer-motion";
 
 const Projects = () => {
   return (
-    <section className="relative w-full py-24 px-10 bg-surface-dark/30" id="projects">
+    <motion.section className="relative w-full py-24 px-10 bg-surface-dark/30" id="work">
         {/* Header */}
         <div className='flex flex-col md:flex-row md:justify-between mb-10 items-end'>
         <div className=''>
@@ -41,7 +42,7 @@ const Projects = () => {
          }
 
         </div>
-    </section>
+    </motion.section>
   )
 }
 
