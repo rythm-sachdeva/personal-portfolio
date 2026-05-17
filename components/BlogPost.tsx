@@ -56,6 +56,17 @@ const customComponents: Components = {
       {...props}
     />
   ),
+  a: ({ node, href, children, ...props }: ComponentPropsWithoutRef<"a"> & ExtraProps) => (
+  
+   <a href={href ?? "#"}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-400   hover:text-blue-300 transition-colors"
+    {...props}
+  >
+    {children}
+  </a>
+),
   hr: ({ node, ...props }: ComponentPropsWithoutRef<"hr"> & ExtraProps) => (
     <hr className="my-8 border-white/10" {...props} />
   ),

@@ -42,7 +42,7 @@ export const cardContent: CardContent[] = [
 {
   id: "RHYTHMS2026",
   imageUrl: "/Rhythms2.png",
-  content: "\n\nAs a live performer singing in small, intimate cafes, I absolutely love interacting with the crowd. But there was always one recurring logistical challenge: managing song requests. People would shout out tracks, write them on napkins, or try to catch my attention between sets. I needed a way to crowdsource the setlist smoothly without breaking the flow of the gig.\n\n### The Birth of Rhythms\n\nThat's how **Rhythms** was born. I wanted to build a platform where I could create a dedicated 'room' for my gig and share a simple link with the audience. Instead of chaotic requests, attendees can join the room, view the available music, and upvote the songs they want to hear. The magic happens automatically: the most upvoted song gets queued up to be played or sung next. It completely democratizes the vibe of the room and keeps the audience deeply engaged.\n\n### Supercharging Setlists with AI\n\nTo make setting up these rooms even faster before a gig, I integrated an AI-powered playlist generation feature. Instead of manually curating and adding 50 tracks, I can just type a prompt like *\"Create a playlist of 90s acoustic Bollywood songs\"* and instantly populate the room's library for the crowd to start voting on.\n\n### The Tech Stack\n\nI needed a robust, fast, and scalable stack to handle real-time interactions and provide a seamless user experience. I built Rhythms using:\n* **Framework:** Next.js for a snappy, responsive frontend and integrated API routes.\n* **Database & ORM:** PostgreSQL managed with Prisma ORM for reliable, type-safe data handling.\n* **Deployment:** Hosted on Vercel for continuous integration and zero-friction deployments.\n\nYou can check out the live platform here: [https://rhythms-one.vercel.app](https://rhythms-one.vercel.app)\n\n### What's Next: Monetization and Mixing\n\nThe immediate next step is introducing a \"pay-to-play\" or premium request feature. This will allow the audience to attach a small tip to their song request to bump it up the queue, creating a direct monetization stream for independent performers. Down the line, I'm also planning to implement real-time mixing capabilities, making the platform just as powerful for DJs spinning tracks as it is for acoustic singers.",
+  content: `\n\nAs a live performer singing in small, intimate cafes, I absolutely love interacting with the crowd. But there was always one recurring logistical challenge: managing song requests. People would shout out tracks, write them on napkins, or try to catch my attention between sets. I needed a way to crowdsource the setlist smoothly without breaking the flow of the gig.\n\n### The Birth of Rhythms\n\nThat's how **Rhythms** was born. I wanted to build a platform where I could create a dedicated 'room' for my gig and share a simple link with the audience. Instead of chaotic requests, attendees can join the room, view the available music, and upvote the songs they want to hear. The magic happens automatically: the most upvoted song gets queued up to be played or sung next. It completely democratizes the vibe of the room and keeps the audience deeply engaged.\n\n### Supercharging Setlists with AI\n\nTo make setting up these rooms even faster before a gig, I integrated an AI-powered playlist generation feature. Instead of manually curating and adding 50 tracks, I can just type a prompt like *\"Create a playlist of 90s acoustic Bollywood songs\"* and instantly populate the room's library for the crowd to start voting on.\n\n### The Tech Stack\n\nI needed a robust, fast, and scalable stack to handle real-time interactions and provide a seamless user experience. I built Rhythms using:\n* **Framework:** Next.js for a snappy, responsive frontend and integrated API routes.\n* **Database & ORM:** PostgreSQL managed with Prisma ORM for reliable, type-safe data handling.\n* **Deployment:** Hosted on Vercel for continuous integration and zero-friction deployments.\n\nYou can check out the live platform here: [Rhythms app](https://rhythms-one.vercel.app)\n\n### What's Next: Monetization and Mixing\n\nThe immediate next step is introducing a \"pay-to-play\" or premium request feature. This will allow the audience to attach a small tip to their song request to bump it up the queue, creating a direct monetization stream for independent performers. Down the line, I'm also planning to implement real-time mixing capabilities, making the platform just as powerful for DJs spinning tracks as it is for acoustic singers.`,
   primaryTitle: "Crowdsourcing the Vibe: Building Rhythms for Interactive Live Performances",
   secondaryTitle: "Rhythms",
   tags: [
@@ -55,8 +55,42 @@ export const cardContent: CardContent[] = [
   cardTitle: "Product Development",
   date: "Sat Apr 04 2026",
   readTime: "6 minutes"
+},
+{
+  id: "AUTOD2026",
+  imageUrl: "/zap.avif",
+  content: "\n\nEvery business eventually hits the same wall: too many tools, too many manual handoffs, and not enough time. I built autoD because I wanted to understand — and solve — what it actually takes to wire up reliable automation at scale.\n\n### The Problem Worth Solving\n\nZapier and its alternatives are powerful, but they're black boxes. For businesses with non-trivial workflows, that opacity becomes a liability. I wanted to build something transparent, self-hostable, and architecturally honest — a platform where every step of a workflow is traceable and every failure is recoverable.\n\n### A Microservices Architecture That Earns Its Complexity\n\nAutoD is built as a decoupled system with three distinct services — Hooks, Processor, and Worker — each with a single responsibility. They don't talk to each other directly. Instead, they communicate asynchronously through Kafka, which means no single service becoming a bottleneck and no cascading failures when one part of the system is under load.\n\n### Guaranteed Delivery with the Transactional Outbox Pattern\n\nThe hardest part of any event-driven system isn't the happy path — it's what happens when things go wrong mid-flight. To solve this, I implemented the Transactional Outbox Pattern, which ties every database write and every Kafka event emission into a single atomic operation against PostgreSQL. The result is at-least-once delivery with no data loss, even during crashes or network interruptions. For businesses, this means workflows either complete fully or can be safely retried — never silently dropped.\n\n### The User-Facing Platform\n\nOn the frontend, autoD gives teams a straightforward interface built with Next.js to define, manage, and monitor their automation workflows. Webhooks serve as the entry point, and the Node.js/TypeScript backend handles the orchestration logic from there. Complex multi-step workflows are a first-class citizen — not an afterthought.\n\n### What's Next\n\nThe core platform is running. The next phase is focused on making it production-ready for real business environments: better observability, retry dashboards, and integrations with the tools teams already use. The goal was never to rebuild Zapier — it was to build something businesses can actually own.",
+  primaryTitle: "autoD: Building a Production-Grade Workflow Automation Platform from the Ground Up",
+  secondaryTitle: "A Zapier-like microservices platform with guaranteed event delivery",
+  tags: [
+    "Kafka",
+    "Microservices",
+    "Next.js",
+    "TypeScript",
+    "PostgreSQL",
+    "System Design"
+  ],
+  cardTitle: "Personal Project",
+  date: "Sun May 17 2026",
+  readTime: "6 minutes"
+},
+{
+  id: "PINKPETAL2026",
+  imageUrl: "/pinkpetal.png",
+  content: "\n\nNot every business needs a SaaS platform or a viral product. Some just need a door — a way for people nearby to find them, trust them, and walk in. Pink Petal Play School in New Delhi is one of those businesses, and building their online presence was one of the most grounded projects I've worked on.\n\n### The Problem with Local Visibility\n\nSmall schools, local clinics, neighborhood stores — they do real work in real communities, but most of them are invisible online. No website, no contact page, nothing. Word of mouth only stretches so far. The idea behind this project was simple: what would it look like to genuinely onboard a local business onto the internet, not with a generic template, but with something that actually reflects who they are?\n\n### Pink Petal Play School\n\nFounded in 2016 by Mrs. Neetu Sachdeva, Pink Petal has served over 850 families in DDA Flats, New Delhi. The school was born out of a personal conviction — that children learn best when they're genuinely heard. That story deserved more than a Google Maps pin.\n\n### What I Built\n\nThe frontend is live at [Pink Petal Web](https://pink-petal-frontend.vercel.app), built with Next.js and Tailwind CSS, with Framer Motion handling the animations throughout. The goal was to make the site feel warm and intentional — not corporate. Key sections include the school's founding journey told as a timeline, a photo gallery of real school moments, a tour scheduling form for parents, and all the contact and location details a local family would need.\n\n### The Bigger Picture\n\nThis is part of a broader initiative I'm working on: helping local businesses establish an online presence so they get the visibility they've earned. Pink Petal is the first. The idea is to take what works here and scale the approach — clean, fast, human-first websites for businesses that have never had one.\n\n### Currently Underway\n\nThe site is live and improving. More businesses are in the pipeline.",
+  primaryTitle: "Pink Petal Play School: Giving a Local Business Its First Real Online Presence",
+  secondaryTitle: "A frontend initiative to onboard local businesses onto the web",
+  tags: [
+    "Next.js",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Local Business",
+    "Frontend"
+  ],
+  cardTitle: "Client Project",
+  date: "Sun May 17 2026",
+  readTime: "4 minutes"
 }
-
 
 
 

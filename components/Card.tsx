@@ -10,7 +10,7 @@ const Card = ({content}:{content:CardContent}) => {
  const router = useRouter();
     return (
         <div className="group relative aspect-4/3 overflow-hidden rounded-xl bg-[#1c1f2e] cursor-pointer shadow-lg shadow-black/20">
-            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-hover:blur-sm" style={{backgroundImage:`url('${content.imageUrl}')`}}></div>
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-hover:blur-sm group-hover:opacity-50" style={{backgroundImage:`url('${content.imageUrl}')`}}></div>
             <div className="glass-overlay absolute inset-0 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 p-6 text-center">
                 <div className="translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
                     <h3 className="text-xl font-bold text-white">{content.cardTitle}</h3>
