@@ -1,6 +1,7 @@
 'use client'
 
 import { CardContent } from '@/globals/Card-Content'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import { FaArrowRight } from "react-icons/fa";
@@ -23,12 +24,12 @@ const Card = ({content}:{content:CardContent}) => {
                     }
                     </p>
                 </div>
-                <button onClick={()=>{
-                    router.push(`/work/${content.id}`)
-                }} className="group translate-y-4 mt-2 flex items-center gap-2 rounded-lg bg-primary/90 px-4 py-2 text-sm font-bold text-white transition-all duration-300 hover:bg-primary group-hover:translate-y-0 cursor-pointer">
+                <Link href={`/work/${content.id}`} className="translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
+                <button className="group translate-y-4 mt-2 flex items-center gap-2 rounded-lg bg-primary/90 px-4 py-2 text-sm font-bold text-white transition-all duration-300 hover:bg-primary group-hover:translate-y-0 cursor-pointer">
                     View Case Study
                     <FaArrowRight/>
                 </button>
+                </Link>
             </div>
         </div>
     )
